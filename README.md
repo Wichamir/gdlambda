@@ -55,8 +55,8 @@ var r1 := l1.execute([8]) as int
 var l2 := gdl.lambda(
 """
 func(x):
-print(x)
-return x*x
+	print(x)
+	return x*x
 """
 )
 var r2 := l2.execute([8]) as int
