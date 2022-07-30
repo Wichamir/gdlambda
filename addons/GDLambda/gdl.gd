@@ -78,12 +78,26 @@ class Lambda extends Reference:
 		
 		# parse captured variables
 		for name in captured:
+			for c in name:
+				var code := ord(c)
+				assert(
+					(code >= 65 and code <= 90) or
+					(code >= 97 and code <= 122) or
+					(code >= 48 and code <= 57 and name[0] != c),
+					"[GDLambda] Captured variable name '%s' includes invalid characters!" % name
+				)
 			source = source.insert(0, "var %s\n" % name)
 		
 		# parse source code
 		result._script = GDScript.new()
 		result._script.source_code = source
-		result._script.reload()
+		var error := result._script.reload()
+		assert(
+			 error == OK,
+			"[GDLambda] Script reload failed. Error code: %d. Source code:\n%s" % [
+				error, result._script.source_code
+			]
+		)
 		
 		# create instance
 		result._instance = result._script.new()
