@@ -81,9 +81,10 @@ class Lambda extends Reference:
 			for c in name:
 				var code := ord(c)
 				assert(
-					(code >= 65 and code <= 90) or
-					(code >= 97 and code <= 122) or
-					(code >= 48 and code <= 57 and name[0] != c),
+					(code >= ord('A') and code <= ord('Z')) or
+					(code >= ord('a') and code <= ord('z')) or
+					(code == ord('_')) or
+					(code >= ord('0') and code <= ord('9') and name[0] != c),
 					"[GDLambda] Captured variable name '%s' includes invalid characters!" % name
 				)
 			source = source.insert(0, "var %s\n" % name)
