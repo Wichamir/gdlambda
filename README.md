@@ -13,6 +13,19 @@ Copy GDLambda directory into addons directory of your project.
 
 ## Usage
 
+```gdscript
+var lambda := gdl.lambda("func(x): return x*x*x")
+print(lambda.execute(4)) # 64
+```
+
+```gdscript
+var units := get_children()
+units.sort_custom( # sort units by their initiative
+    gdl.lambda("func(a, b): return a.initiative > b.initiative").as_funcref(),
+    "call_func"
+)
+```
+
 See [examples.gd](addons/GDLambda/examples.gd).
 
 ## Is it safe?
@@ -28,7 +41,7 @@ whereas lambdas can access and instance any built-in class as well as singletons
 
 To be safe:
 If you want to have an access to any external variables ONLY pass them as arguments or capture them using Dictionary
-(see [examples](addons/GDLambda/examples.gd)) and NEVER insert any user-defined strings into lambda source
+(see [examples.gd](addons/GDLambda/examples.gd)) and NEVER insert any user-defined strings into lambda source
 (again, think of eval from JavaScript).
 
 ## Is it production ready?
