@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "gdl",
 "language": "GDScript",
-"path": "res://addons/GDLambda/gdl.gd"
+"path": "res://addons/gdlambda/gdl.gd"
 } ]
 _global_script_class_icons={
 "gdl": ""

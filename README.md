@@ -9,7 +9,7 @@ Most of these are already available in GDScript 2.0, but at the time of writing 
 
 ## Installation
 
-Copy GDLambda directory into addons directory of your project.
+Copy addons/gdlambda directory into the addons directory of your project.
 
 ## Usage
 
