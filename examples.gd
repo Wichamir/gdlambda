@@ -2,7 +2,7 @@ extends SceneTree
 
 
 # Run examples from project root directory using:
-# godot --no-window --script addons/GDLambda/examples.gd
+# godot --no-window --script examples.gd
 
 
 # warnings-disable

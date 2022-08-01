@@ -26,7 +26,7 @@ units.sort_custom( # sort units by their initiative
 )
 ```
 
-See [examples.gd](addons/GDLambda/examples.gd).
+See [examples.gd](examples.gd).
 
 ## Is it safe?
 
@@ -41,7 +41,7 @@ whereas lambdas can access and instance any built-in class as well as singletons
 
 To be safe:
 If you want to have an access to any external variables ONLY pass them as arguments or capture them using Dictionary
-(see [examples.gd](addons/GDLambda/examples.gd)) and NEVER insert any user-defined strings into lambda source
+(see [examples.gd](examples.gd)) and NEVER insert any user-defined strings into lambda source
 (again, think of eval from JavaScript).
 
 ## Is it production ready?
